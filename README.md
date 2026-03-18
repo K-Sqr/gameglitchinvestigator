@@ -50,4 +50,12 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 🚀 Stretch Features
 
-[If you choose to complete a stretch challenge, insert a screenshot here]
+All five optional challenges were completed:
+
+- **Challenge 1 -- Advanced Edge-Case Testing:** Added 27 new edge-case tests (57 total) covering negative numbers, decimals, `inf`/`NaN`, whitespace, special characters, leading zeros, extremely large integers, double dots, plus-sign prefixes, and boundary conditions. Also added tests for `get_closeness_label` and `save_high_score`/`load_high_scores`.
+- **Challenge 2 -- Feature Expansion (High Score + Guess History):** Implemented a High Score tracker that persists best scores per difficulty to `high_scores.json`. Added a Guess History panel showing each guess, its outcome, and a Hot/Cold closeness label in a table.
+- **Challenge 3 -- Professional Documentation & Linting:** Added comprehensive Google-style docstrings with Args/Returns/Examples sections to every function in `logic_utils.py`. Added type annotations. Verified PEP 8 compliance.
+- **Challenge 4 -- Enhanced Game UI:** Added color-coded hint messages (red for Too High, amber for Too Low, green for Win), Hot/Cold emoji labels (Burning hot / Very warm / Warm / Cool / Ice cold) based on guess proximity, a two-column layout with a guess history data table, and high score metrics in the sidebar.
+- **Challenge 5 -- AI Model Comparison:** Compared Cursor (Copilot / Claude) vs ChatGPT (GPT-4o) on the swapped-hints bug. Full analysis is in `reflection.md` section 6.
+
+[Insert a screenshot of your Enhanced Game UI and pytest results here]

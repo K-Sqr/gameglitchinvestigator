@@ -21,6 +21,9 @@ pip-wheel-metadata/
 # Streamlit
 .streamlit/secrets.toml
 
+# Game data
+high_scores.json
+
 # Test and coverage artifacts
 .pytest_cache/
 .coverage

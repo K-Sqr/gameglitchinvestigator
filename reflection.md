@@ -41,3 +41,17 @@ One habit I want to carry forward is writing targeted tests immediately after fi
 Next time I work with AI, I will be more skeptical of AI suggestions that say code is "working as intended." The scoring bug was a clear example where the AI initially defended broken logic as an intentional design choice. I learned to always trace through the code manually with concrete inputs before accepting an AI's analysis.
 
 This project taught me that AI-generated code can look perfectly reasonable while hiding subtle bugs that only reveal themselves at runtime. The lesson is clear: never trust AI code without running it, testing it, and reading it critically yourself.
+
+---
+
+## 6. AI Model Comparison (Challenge 5)
+
+I took the swapped-hints bug in `check_guess` and asked two different AI tools for a fix: **Cursor (Copilot / Claude)** and **ChatGPT (GPT-4o)**.
+
+**The bug:** When `guess > secret`, the function returned `"📈 Go HIGHER!"` instead of `"📉 Go LOWER!"`, and vice versa. The outcome strings (`"Too High"`, `"Too Low"`) were correct, but the player-facing messages pointed in the wrong direction.
+
+**Cursor (Copilot):** Identified the bug immediately when given the full file context. It explained that the emoji messages were swapped relative to the outcome strings, and produced a clean two-line fix that simply swapped the messages. It also flagged the `TypeError` fallback branch as suspicious and recommended removing it. The explanation was concise and directly actionable.
+
+**ChatGPT (GPT-4o):** Also identified the swap correctly. However, its fix was more verbose -- it rewrote the entire function with additional error handling (type checks, range validation) that wasn't necessary for this specific bug. The explanation was more thorough in terms of *why* the original developer might have made the mistake, discussing how the emoji arrows can be visually misleading. It also suggested adding unit tests, which was helpful but added scope beyond what was asked.
+
+**Verdict:** Cursor gave the more *readable* and focused fix -- it changed exactly what needed to change and nothing more. ChatGPT gave a better *explanation* of the root cause and the human factors behind the mistake, but its code changes were over-engineered for a simple swap bug. In practice, I preferred Cursor's surgical approach for the actual repair, and used ChatGPT's reasoning to inform my reflection notes. The takeaway: different models have different strengths, and using both can give you better coverage than relying on either one alone.
