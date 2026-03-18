@@ -137,10 +137,10 @@ def test_parse_negative_number():
     assert err is None
 
 
-def test_parse_very_large_number():
-    ok, value, err = parse_guess("999999999")
+def test_parse_large_but_valid_number():
+    ok, value, err = parse_guess("999999")
     assert ok is True
-    assert value == 999999999
+    assert value == 999999
     assert err is None
 
 
@@ -177,10 +177,10 @@ def test_parse_plus_sign():
     assert value == 42
 
 
-def test_parse_extremely_large_integer():
+def test_parse_extremely_large_integer_rejected():
     ok, value, err = parse_guess("99999999999999999999")
-    assert ok is True
-    assert value == 99999999999999999999
+    assert ok is False
+    assert "out of range" in err
 
 
 def test_parse_float_with_no_integer_part():

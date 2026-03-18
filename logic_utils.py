@@ -129,6 +129,8 @@ def parse_guess(raw: Optional[str]) -> tuple[bool, Optional[int], Optional[str]]
     Handles ``None``, empty strings, decimals (truncated to int via
     ``int(float(...))``) and non-numeric garbage. Strings like ``"inf"`` and
     ``"NaN"`` are rejected because ``int(float(...))`` raises for those values.
+    Values outside +/-1,000,000 are rejected to prevent overflow errors in the
+    Streamlit/Arrow rendering pipeline.
 
     Args:
         raw: The string entered by the player, or ``None`` if nothing was
@@ -162,6 +164,9 @@ def parse_guess(raw: Optional[str]) -> tuple[bool, Optional[int], Optional[str]]
             value = int(raw)
     except Exception:
         return False, None, "That is not a number."
+
+    if value > 10**6 or value < -(10**6):
+        return False, None, "That number is out of range."
 
     return True, value, None
 
