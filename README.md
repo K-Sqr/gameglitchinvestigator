@@ -46,7 +46,7 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📸 Demo
 
-[Insert a screenshot of your fixed, winning game here]
+![Fixed winning game showing score, guess history, and high scores](assets/demo-winning-game.png)
 
 ## 🚀 Stretch Features
 
@@ -58,4 +58,6 @@ All five optional challenges were completed:
 - **Challenge 4 -- Enhanced Game UI:** Added color-coded hint messages (red for Too High, amber for Too Low, green for Win), Hot/Cold emoji labels (Burning hot / Very warm / Warm / Cool / Ice cold) based on guess proximity, a two-column layout with a guess history data table, and high score metrics in the sidebar.
 - **Challenge 5 -- AI Model Comparison:** Compared Cursor (Copilot / Claude) vs ChatGPT (GPT-4o) on the swapped-hints bug. Full analysis is in `reflection.md` section 6.
 
-[Insert a screenshot of your Enhanced Game UI and pytest results here]
+![Pytest results - 57 tests collected, all passing (part 1)](assets/pytest-results-1.png)
+
+![Pytest results - 57 passed in 0.14s (part 2)](assets/pytest-results-2.png)
