@@ -90,9 +90,9 @@ with main_col:
 
     col1, col2, col3 = st.columns(3)
     with col1:
-        submit = st.button("Submit Guess 🚀")
+        submit = st.button("Submit Guess ")
     with col2:
-        new_game = st.button("New Game 🔁")
+        new_game = st.button("New Game ")
     with col3:
         show_hint = st.checkbox("Show hint", value=True)
 
