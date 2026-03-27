@@ -48,7 +48,7 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ![Fixed winning game showing score, guess history, and high scores](assets/demo-winning-game.png)
 
-## 🚀 Stretch Features
+## 🚀 Stretch 
 
 All five optional challenges were completed:
 
